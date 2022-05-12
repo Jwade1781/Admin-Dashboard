@@ -1,0 +1,42 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+}
+
+.layer {
+    height: 100vh;
+    background-color: aquamarine;
+}
+
+.layer > div {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    background-color: green;
+}
+
+.sideBar {
+    background-color: blue;
+    grid-column: 1/2;
+    height: 100%;
+}
+
+#mainContent {
+    background-color: purple;
+    grid-column: 2/3;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+}
+
+#mainContent > div {
+    background-color: yellow;
+    height: 100%;
+
+}
+
+#mainContent:nth-child(2){
+    background-color: grey;
+    height: 100%;
+}
