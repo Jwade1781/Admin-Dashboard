@@ -17,51 +17,76 @@
     <div class="layer">
         <div class="container">
             <nav class="sideBar">
-                <div class="logo">
-                    <img src="../data/Images/chart.svg">
-                    <h4>Dashboard</h4>
-                </div>
-                <div class="">
-                    <ul>
-                        <li><img class="icon" src="../data/Images/home.png"> <a>Home</a></li>
-                        <li><img class="icon" src="../data/Images/profile.png"> <a>Profile</a></li>
-                        <li><img class="icon" src="../data/Images/message.png"> <a>Messages</a></li>
-                        <li><img class="icon" src="../data/Images/history.png"> <a>History</a></li>
-                        <li><img class="icon" src="../data/Images/tasks.png"> <a>Tasks</a></li>
-                        <li><img class="icon" src="../data/Images/communities.png"> <a>Communities</a></li>
-                    </ul>
-                </div>
+                <div>
+                    <div class="logo">
+                        <img src="../data/Images/icons/chart.svg">
+                        <h4>Dashboard</h4>
+                    </div>
+                    <div>
+                        <ul>
+                            <li><img class="icon" src="../data/Images/icons/home.png"> <a>Home</a></li>
+                            <li><img class="icon" src="../data/Images/icons/profile.png"> <a>Profile</a></li>
+                            <li><img class="icon" src="../data/Images/icons/message.png"> <a>Messages</a></li>
+                            <li><img class="icon" src="../data/Images/icons/history.png"> <a>History</a></li>
+                            <li><img class="icon" src="../data/Images/icons/tasks.png"> <a>Tasks</a></li>
+                            <li><img class="icon" src="../data/Images/icons/communities.png"> <a>Communities</a></li>
+                        </ul>
+                    </div>
 
-                <div class="">
-                    <ul>
-                        <li><img class="icon" src="../data/Images/settings.png"> <a>Settings</a></li>
-                        <li><img class="icon" src="../data/Images/support.png"> <a>Support</a></li>
-                        <li><img class="icon" src="../data/Images/privacy.png"> <a>Privacy</a></li>
-                    </ul>
+                    <div class="">
+                        <ul>
+                            <li><img class="icon" src="../data/Images/icons/settings.png"> <a>Settings</a></li>
+                            <li><img class="icon" src="../data/Images/icons/support.png"> <a>Support</a></li>
+                            <li><img class="icon" src="../data/Images/icons/privacy.png"> <a>Privacy</a></li>
+                        </ul>
+                    </div>
                 </div>
             </nav>
 
             <div id="mainContent">
                 <div id="topRow">
-                    <div>
-                        <img src="../data/Images/magnify.svg">
-                        <input area="text" placeholder="Quick Search">
-                    </div>
-
                     <div id="welcomeContainer">
-                        <img class="avatar" src="../data/Images/userCat.jpg">
-                        <h3>Welcome back Hacker Kitty!</h3>
+                        <img class="avatar" src="../data/Images/profiles/userCat.jpg">
+                        <h3>Welcome back, Hacker Kitty!</h3>
+                    </div>
+                    <div>
+                        <input area="text" placeholder="Quick Search">
+                        <img src="../data/Images/icons/magnify.svg">
+                        
                     </div>
                 </div>
 
 
                 <div id="trends">
-                    <h4>Today's Trends</h4>
-                <div id="tickets">Unresolved Tickets</div>
-                <div id="tasks">Tasks</div>
+                    <div class="invalid" id="trendGraphContainer">
+                        <h4>Today's Trends</h4>
+                        <img src="../data/Images/other/chart.svg">
+                    </div>
+
+                    <div id="trendStatContainer">
+                        <div class="trendsStats valid">
+                            <h4>Resolved</h4>
+                            <a>210</a>
+                        </div>
+
+                        <div class="trendsStats valid">
+                            <h4>Received</h4>
+                            <a>305</a>
+                        </div>
+
+                        <div class="trendsStats invalid">
+                            <h4>Average Response Time</h4>
+                            <a>2h 6m</a>
+                        </div>
+
+                        <div class="trendsStats valid">
+                            <h4>Resolution within SLA</h4>
+                            <a>90%</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 </body>
 
 </html>
