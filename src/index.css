@@ -2,6 +2,7 @@ html, body {
     margin: 0px;
     padding: 0px;
     height: 100vh;
+    max-height: 100vh;
 }
 
 .layer {
@@ -12,31 +13,85 @@ html, body {
 .layer > div {
     height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 3fr;
-    background-color: green;
+    grid-template-columns: 1fr 4fr;
+    background-color: black;
 }
+
 
 .sideBar {
-    background-color: blue;
-    grid-column: 1/2;
-    height: 100%;
+    background-color: #C5979D;
+    font-size: 1.8rem;
+    display: inline-grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 4fr;
+    
 }
 
+.sideBar .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid black;
+    gap: 0.5rem;
+}
+
+.avatar {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    height: 100px;
+    width: auto;
+}
+
+
+.split {
+    border: 1px solid black;
+}
+
+
+
+
+
+
+
+
+
+/* Right Side */
 #mainContent {
     background-color: purple;
     grid-column: 2/3;
-    height: 100%;
     display: grid;
-    grid-template-rows: 1fr 5fr;
+    grid-template-rows: 1fr 4fr;
 }
 
 #mainContent > div {
-    background-color: yellow;
-    height: 100%;
-
+    background-color: #a7f3d0;
+    display: grid;
+    grid-template-rows: 1fr 2fr;
 }
 
 #mainContent:nth-child(2){
-    background-color: grey;
-    height: 100%;
+    background-color: #4B8F8C;
+}
+
+.logo > img {
+    max-width: 100px;
+    height: auto;
+}
+
+#welcomeContainer {
+    display: inline-grid;
+
+}
+
+#welcomeContainer > img {
+    max-width: 100px;
+    height: auto;
+}
+
+.avatar {
+    border-radius: 50%;
+}
+
+
+ul li {
+    list-style: none;
 }
