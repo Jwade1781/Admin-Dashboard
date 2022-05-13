@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
     <script src="main.js"></script>
 </head>
@@ -14,43 +17,48 @@
     <div class="layer">
         <div class="container">
             <nav class="sideBar">
-                <div class="logo split">
-                    <img class="avatar" src="../data/Images/userCat.jpg">
+                <div class="logo">
+                    <img src="../data/Images/chart.svg">
                     <h4>Dashboard</h4>
                 </div>
-                <div class="split">
+                <div class="">
                     <ul>
-                        <li>Home</li>
-                        <li>Profile</li>
-                        <li>Messages</li>
-                        <li>History</li>
-                        <li>Tasks</li>
-                        <li>Communities</li>
+                        <li><img class="icon" src="../data/Images/home.png"> <a>Home</a></li>
+                        <li><img class="icon" src="../data/Images/profile.png"> <a>Profile</a></li>
+                        <li><img class="icon" src="../data/Images/message.png"> <a>Messages</a></li>
+                        <li><img class="icon" src="../data/Images/history.png"> <a>History</a></li>
+                        <li><img class="icon" src="../data/Images/tasks.png"> <a>Tasks</a></li>
+                        <li><img class="icon" src="../data/Images/communities.png"> <a>Communities</a></li>
                     </ul>
                 </div>
 
-                <div class="split">
+                <div class="">
                     <ul>
-                        <li>Settings</li>
-                        <li>Support</li>
-                        <li>Privacy</li>
+                        <li><img class="icon" src="../data/Images/settings.png"> <a>Settings</a></li>
+                        <li><img class="icon" src="../data/Images/support.png"> <a>Support</a></li>
+                        <li><img class="icon" src="../data/Images/privacy.png"> <a>Privacy</a></li>
                     </ul>
                 </div>
             </nav>
 
             <div id="mainContent">
-                <div>
+                <div id="topRow">
                     <div>
                         <img src="../data/Images/magnify.svg">
-                        <input area="text">
-                    </div>
-                    <div id="welcomeContainer">
-                        <img class="avatar" src="">
-                        <h6>Welcome,</h6>
-                        <h5>Hacker Kitty</h5>
+                        <input area="text" placeholder="Quick Search">
                     </div>
 
+                    <div id="welcomeContainer">
+                        <img class="avatar" src="../data/Images/userCat.jpg">
+                        <h3>Welcome back Hacker Kitty!</h3>
+                    </div>
                 </div>
+
+
+                <div id="trends">
+                    <h4>Today's Trends</h4>
+                <div id="tickets">Unresolved Tickets</div>
+                <div id="tasks">Tasks</div>
             </div>
         </div>
     </div>
