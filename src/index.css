@@ -4,9 +4,10 @@
     --circleCurve: 50%;
 
     --sideBarMainColor: #363740;
-    --sideBarAccentColor: #BCFD4C;
+    /*--sideBarAccentColor: #BCFD4C;*/
+    --sideBarAccentColor: lightblue;
 
-    --topRowMainColor: #bfc1bc;
+    --topRowMainColor: #202020;
 
     --mainContentMainColor: #7F8487;
     --validColor: blue;
@@ -30,7 +31,7 @@ body {
 .layer>div {
     height: 100%;
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 1fr 4fr;
     background-color: black;
 }
 
@@ -45,7 +46,7 @@ body {
     font-size: 1.8rem;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 2fr 4fr;
+    grid-template-rows: repeat(1, 1fr);
     padding: 10px;
     
 }
@@ -58,7 +59,7 @@ body {
     gap: 0.5rem;
 }
 .sideBar > div {
-    position: fixed;
+    position: static;
 }
 .sideBar > div > div:nth-child(2) {
     display: grid;
@@ -105,22 +106,27 @@ body {
     background-color: purple;
     grid-column: 2/3;
     display: grid;
-    grid-template-rows: 120px 1fr;
+    grid-template-rows: 75px;
 }
 
 
 
 #topRow{
+    color: white;
     background-color: var(--topRowMainColor);
     display: grid;
-    grid-template-rows: 1fr 1fr;
     grid-template-columns: repeat(8, 1fr);
+    border-bottom: 2px solid var(--sideBarAccentColor);
+}
+
+#topRow > *{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
 #topRow div:nth-child(2) {
     grid-column: 3/6;
-    display: flex;
-    align-items: center;
     --searchBoxHeight: 30px;
 }
 
@@ -130,9 +136,6 @@ body {
     background-color: var(--mainContentMainColor);
 }
 
-#topRow div:nth-child(2) input::placeholder{
-    color: black;
-}
 
 #topRow div:nth-child(2) img {
     background-color: grey;
@@ -141,20 +144,30 @@ body {
     border-radius: 0px var(--slightCurve) 0px 0px;
 }
 
+#topRow div:nth-child(2), #topRow div:nth-child(3){
+    align-items: start;
+    margin-top: 10px;
+}
+
+#topRow div:nth-child(3) {
+    grid-column: 8/9;
+}
+
+#topRow div:nth-child(3) img {
+    height: 75%;
+    width: auto;
+}
+
 #welcomeContainer {
     display: flex;
-    align-items: end;
-    gap: 20px;
-    grid-area: 2/1/3/4;
+    gap: 10px;
+    grid-area: 1/1/1/3;
 }
 
 #welcomeContainer>img {
-    margin-bottom: 15px;
     max-width: 75px;
     height: auto;
-
 }
-
 
 
 
@@ -167,48 +180,50 @@ body {
     padding-left: 1.0em;
 }
 
+#bottomRow {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
 
-#trends {
+#projects {
     padding-top: 15px;
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(8, 1fr);
-    
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, min(1fr, 2fr));
+    gap: 10px;
+    position: relative;
 }
 
-#trendGraphContainer{
-    grid-column: 1/2;
-    width: auto;
-    background-color: whitesmoke;
-}
-
-#trendGraphContainer h4 {
-    margin-left: 10px;
-}
-
-#trendStatContainer{
-    grid-column: 3/7;
+#projects > * {
     display: grid;
-    grid-template-rows: repeat(4, 1fr);
-    width: fit-content;
-    text-align: center;
-    gap: 3px;
-}
-
-#trendStatContainer > * {
-    padding: 0px 20px;
+    grid-template-columns: max-content;
     background-color: white;
     border-radius: var(--slightCurve);
+    padding: 20px;
+    justify-content: center;
+    cursor: pointer;
 }
 
-
-#trendGraphContainer img{
-    object-fit: cover;
+#projects > *:hover{
+    background-color: #EFEFEF;
+    border-left: 10px solid lightblue;
 }
 
+#projects > * > .preview {
+    width: clamp(350px, 500px, 700px);
+    height: auto;
+}
 
+#projects > * > div {
+    display: inline-flex;
+    gap: 10px;
+}
 
-
+#projects > * > div > .githubLogo {
+    height: 50px;
+    width: auto;
+}
 
 .valid:hover {
     color: var(--validColor);
@@ -221,6 +236,11 @@ body {
 
 ul li {
     list-style: none;
+}
+
+
+input::placeholder{
+    color: black;
 }
 
 
