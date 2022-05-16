@@ -1,7 +1,11 @@
 :root {
     box-sizing: border-box;
+    --smallerBorder: 0.1rem;
+    --smallBorder: .2rem;
 
     --innerPadding: 10px;
+    --extremePadding: 2.0rem;
+
     --gap: 10px;
 
     --slightCurve: 10px;
@@ -11,12 +15,10 @@
     --sideBarMainColor: #363740;
     /*--sideBarAccentColor: #BCFD4C;*/
     --sideBarAccentColor: lightblue;
-
     --topRowMainColor: #202020;
-
     --mainContentMainColor: #7F8487;
-    --validColor: blue;
-    --invalidColor: red;
+
+    --shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
 html,
@@ -51,7 +53,7 @@ body {
     /*background-color: #C5979D;*/
     color: #AAA;
     background-color: var(--sideBarMainColor);
-    border-right: .15em solid var(--sideBarAccentColor);
+    border-right: var(--smallBorder) solid var(--sideBarAccentColor);
     font-size: 1.8rem;
     display: grid;
     grid-template-columns: 1fr;
@@ -64,7 +66,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 2px solid black;
+    border-bottom: var(--smallBorder) solid black;
     gap: var(--gap);
 }
 
@@ -93,7 +95,7 @@ body {
     padding: 2px;
     cursor: pointer;
     background-color: #555;
-    border-bottom: 1px solid white;
+    border-bottom: var(--smallerBorder) solid white;
 }
 
 .sideBar .icon {
@@ -127,7 +129,7 @@ body {
     background-color: var(--topRowMainColor);
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    border-bottom: 2px solid var(--sideBarAccentColor);
+    border-bottom: var(--smallBorder) solid var(--sideBarAccentColor);
 }
 
 #topRow>* {
@@ -139,6 +141,7 @@ body {
 #topRow div:nth-child(2) {
     grid-column: 3/6;
     --searchBoxHeight: 30px;
+    
 }
 
 #topRow div:nth-child(2) input {
@@ -150,7 +153,7 @@ body {
 
 #topRow div:nth-child(2) img {
     background-color: grey;
-    height: calc(var(--searchBoxHeight) + 2px);
+    height: calc(var(--searchBoxHeight) + 4px);
     border: 1.5px solid black;
     border-radius: 0px var(--slightCurve) 0px 0px;
 }
@@ -163,10 +166,14 @@ body {
 
 #topRow div:nth-child(3) {
     grid-column: 8/9;
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap);
+    justify-content: center;
 }
 
 #topRow div:nth-child(3) img {
-    height: 75%;
+    height: 50px;
     width: auto;
 }
 
@@ -189,85 +196,140 @@ body {
 
 
 #mainContent>* {
-    padding-left: 1.0em;
+    padding-left: var(--innerPadding);
 }
 
 #bottomRow {
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 4fr 1fr;
     gap: var(--gap);
-    padding-top: var(--innerPadding)
 }
 
 #projects {
+    padding-top: var(--innerPadding);
     display: grid;
     resize: both;
     overflow: auto;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     grid-template-rows: repeat(auto-fit, 450px);
     gap: var(--gap);
+    padding-right: 1px;
 }
 
-#projects>* {
+#projects> .project{
     display: grid;
     grid-template-columns: repeat(auto-fit, (1fr, 2fr));
     background-color: white;
     border-radius: var(--slightCurve);
-    padding: 20px;
+    padding: var(--innerPadding);
     justify-content: center;
-    cursor: pointer;
+    box-shadow: var(--shadow);
 }
 
-#projects>*:hover {
-    background-color: #EFEFEF;
-    border-left: 10px solid lightblue;
-}
-
-#projects>*>.preview {
+#projects>.project>.preview {
     width: clamp(350px, 500px, 700px);
     height: auto;
 }
 
-#projects>*>div {
+#projects>.project>div {
     display: inline-flex;
     gap: var(--gap);
 }
 
-#projects>*>div>.githubLogo {
+.githubLogo {
+    content:url("../data/Images/icons/githubLogo.svg");
     height: 50px;
     width: auto;
 }
 
-
-
-
-#activities {
-    background-color: white;
+#farRightRow {
     height: 100%;
-    padding:var(--innerPadding);
+    background-color: #EFEFEF;
+    padding-left: var(--innerPadding);
 }
 
-.valid:hover {
-    color: var(--validColor);
+#announcements,
+#trends {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
 }
 
-.invalid:hover {
-    color: var(--invalidColor);
+.announcement{
+    padding: 0px var(--innerPadding);
+    flex-direction: column;
+}
+
+.announcement > * {
+    margin: 0px;
+    padding: 0px;
 }
 
 
-ul li {
-    list-style: none;
+.announcement,
+.trend {
+    margin: var(--innerPadding);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--slightCurve);
+    box-shadow: var(--shadow);
+    background-color: white;
+    flex-wrap: wrap;
+    gap: var(--gap);
 }
 
-
-input::placeholder {
-    color: black;
+.announcement > h5 {padding-bottom: var(--innerPadding)}
+.announcement > h4 {
+    padding-top: var(--innerPadding);
+    font-weight: bold;
 }
 
+.trend {
+    flex-direction: row;
+    align-self: center;
+    padding: var(--innerPadding) var(--extremePadding);
+    width: 200px;
 
+}
+
+.trend > div {
+    display: grid;
+    grid-template-rows: 1fr;
+}
+
+.trend > div > h4 {
+    margin: 0px;
+    padding: 0px;
+}
+
+.topIcon:hover {
+    cursor: pointer;
+    border: 2px solid black;
+    background-color: #222;
+
+}
+
+.announcement:hover,
+.trend:hover,
+.project:hover{
+    background-color: #EFEFEF;
+    border-left: 10px solid lightblue;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar {width: 5px;}
+::-webkit-scrollbar-track {background: #f1f1f1; }
+::-webkit-scrollbar-thumb {background: black; }
+::-webkit-scrollbar-thumb:hover {background: #555; }
+
+ul li {list-style: none;}
+input::placeholder {color: black;}
 
 .avatar {
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    box-shadow: var(--shadow);
     border-radius: var(--circleCurve);
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
 }
